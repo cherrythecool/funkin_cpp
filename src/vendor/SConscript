@@ -1,5 +1,0 @@
-Import('env')
-Import('build_target')
-
-SConscript('glad/SConscript')
-SConscript('stb/SConscript')

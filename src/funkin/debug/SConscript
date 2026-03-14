@@ -1,4 +1,0 @@
-Import('env')
-Import('build_target')
-
-env.Object(target='#/' + build_target + 'funkin-debug-cdi', source=['console_debug_info.cpp'])

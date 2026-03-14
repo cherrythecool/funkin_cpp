@@ -66,7 +66,7 @@ namespace crystal {
         _transition_sprite->origin = glm::dvec2(0.0);
         _transition_sprite->shader = AssetServer::get_shader("TRANSITION_SHADER");
         _transition_sprite->tint = COLOR_BLACK;
-        
+
         _transition_shader = _transition_sprite->shader;
         RenderingServer::use_shader(_transition_shader);
         _transition_shader->set_uniform_float("VALUE", 0.0f);
@@ -118,7 +118,7 @@ namespace crystal {
             delete _transition_scene;
 
             // do this to get rid of old unused textures!!! :3
-            AssetServer::check_textures(); 
+            AssetServer::check_textures();
 
             // We have to use it here because _current_scene->init() can cause a shader state change.
             _transition_shader->use();

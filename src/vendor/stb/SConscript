@@ -1,4 +1,0 @@
-Import('env')
-Import('build_target')
-
-env.Object(target='#/' + build_target + 'stb_vorbis', source=['stb_vorbis.c'])

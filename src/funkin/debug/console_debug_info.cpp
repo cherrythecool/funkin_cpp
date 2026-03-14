@@ -17,7 +17,7 @@ namespace funkin {
         _frames_counted += 1;
 
         if (_update_timer->step(delta)) {
-            printf("== Debug Info ==\n %d FPS -- %f mb\n", _frames_counted, getCurrentRSS() / 1024.0 / 1024.0);
+            printf("== Debug Info ==\n %d FPS -- %f mib\n", _frames_counted, getCurrentRSS() / 1024.0 / 1024.0);
             _frames_counted = 0;
         }
     }

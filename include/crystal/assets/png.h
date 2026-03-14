@@ -2,7 +2,7 @@
 
 #include <glm/glm.hpp>
 
-#include <png/png.h>
+#include <png.h>
 #include <stdlib.h>
 
 namespace crystal {

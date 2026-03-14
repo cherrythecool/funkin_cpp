@@ -50,7 +50,7 @@ namespace crystal {
     }
 
     file_binary FileSystem::get_file_binary(const char *path) {
-        file_binary binary;
+        file_binary binary = {0};
 
         if (!get_file_exists(path)) {
             fprintf(stderr, "ERROR: File does not exist at path: %s\n", path);

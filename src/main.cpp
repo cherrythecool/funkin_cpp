@@ -1,16 +1,19 @@
-#include <stdlib.h>
+#include <cstdlib>
 
-#include "crystal.h"
-#include "funkin.h"
+#include "crystal/core/engine.h"
+#include "crystal/scene/startup_scene.h"
 
-// Currently not using int argc, char **argv so they are not included here.
+#include "funkin/scene/title_screen.h"
+#include "funkin/debug/console_debug_info.h"
+
 int main(void) {
     crystal::init_arguments arguments = {
-        glm::uvec2(1280, 720), // width, height //
-        (char*)"Friday Night Funkin'", // name //
-        0, crystal::VSyncMode::OFF, // fps cap, vsync (no adaptive or any special stuff yet) //
-        crystal::Color(0.0, 0.0, 0.0), // clear color //
-        new crystal::StartupScene(new funkin::TitleScreen()), // scene //
+        glm::uvec2(1280, 720),
+        (char*)"Friday Night Funkin'",
+        0,
+        crystal::VSyncMode::OFF,
+        crystal::Color(0.0, 0.0, 0.0),
+        new crystal::StartupScene(new funkin::TitleScreen()),
     };
 
     crystal::Engine::init(arguments);
@@ -18,8 +21,8 @@ int main(void) {
     crystal::RenderingServer::get_primary_window()->set_icon("assets/images/icon.png");
 
     while (!crystal::Engine::get_should_close()) {
-        crystal::Engine::step(); // basically just your update functions //
-        crystal::Engine::draw(); // rendering shit i guess //
+        crystal::Engine::step();
+        crystal::Engine::draw();
     }
 
     crystal::Engine::dispose();

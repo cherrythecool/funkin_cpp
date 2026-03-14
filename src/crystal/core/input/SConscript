@@ -1,4 +1,0 @@
-Import('env')
-Import('build_target')
-
-env.Object(target='#/' + build_target + 'core-input-server', source=['input_server.cpp'])
