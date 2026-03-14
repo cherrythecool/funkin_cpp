@@ -49,15 +49,16 @@ add_executable(${PROJECT_NAME}
 
     src/funkin/audio.cpp
 
-    src/vendor/glad/glad.c
-    src/vendor/stb/stb_vorbis.c
+    thirdparty/glad/glad.c
+    thirdparty/stb/stb_vorbis.c
+    thirdparty/stb/stb_image.c
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
-    include
-    include/crystal
-    include/funkin
-    include/vendor
+    src
+    src/crystal
+    src/funkin
+    thirdparty
 )
 
 set(ZLIB_BUILD_TESTING OFF)

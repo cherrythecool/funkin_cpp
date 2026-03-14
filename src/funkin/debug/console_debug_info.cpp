@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 #include "funkin/debug/console_debug_info.h"
-#include "vendor/memory_usage.h"
+#include "memory_usage.h"
 
 namespace funkin {
     ConsoleDebugInfo::ConsoleDebugInfo() {
