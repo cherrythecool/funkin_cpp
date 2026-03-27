@@ -7,9 +7,9 @@
 #include "funkin/debug/console_debug_info.h"
 
 int main(void) {
-    crystal::init_arguments arguments = {
+    crystal::EngineInitArguments arguments = {
         glm::uvec2(1280, 720),
-        (char*)"Friday Night Funkin'",
+        "Friday Night Funkin'",
         0,
         crystal::VSyncMode::OFF,
         crystal::Color(0.0, 0.0, 0.0),

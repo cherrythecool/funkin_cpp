@@ -32,9 +32,9 @@ namespace crystal {
         OUT = 3
     };
 
-    struct init_arguments {
+    struct EngineInitArguments {
         glm::uvec2 size;
-        char *name;
+        const char *name;
         unsigned int max_framerate;
         VSyncMode vsync_mode;
         Color default_clear_color;
@@ -43,7 +43,7 @@ namespace crystal {
 
     class Engine {
         private:
-            static init_arguments _init_arguments;
+            static EngineInitArguments _init_arguments;
             static Scene *_current_scene;
             static unsigned int _max_framerate;
 
@@ -67,7 +67,7 @@ namespace crystal {
 
             Engine() = delete;
 
-            static void init(const init_arguments init_arguments);
+            static void init(const EngineInitArguments init_arguments);
             static void step(void);
             static void step_transition(void);
             static void draw(void);

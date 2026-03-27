@@ -7,7 +7,7 @@
 namespace crystal {
     const BuildType Engine::build_type;
 
-    init_arguments Engine::_init_arguments;
+    EngineInitArguments Engine::_init_arguments;
     Scene *Engine::_current_scene;
     unsigned int Engine::_max_framerate;
 
@@ -28,7 +28,7 @@ namespace crystal {
     DebugInfo *Engine::current_debug_info;
     glm::uvec2 Engine::size;
 
-    void Engine::init(const init_arguments init_arguments) {
+    void Engine::init(const EngineInitArguments init_arguments) {
         _init_arguments = init_arguments;
         _max_framerate = _init_arguments.max_framerate;
         size = _init_arguments.size;
