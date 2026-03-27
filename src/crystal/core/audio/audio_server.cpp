@@ -1,5 +1,7 @@
 #include "core/audio/audio_server.h"
 
+#include <stdlib.h>
+
 #include "AL/alext.h"
 #include <glm/gtc/type_ptr.hpp>
 
