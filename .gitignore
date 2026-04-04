@@ -10,3 +10,6 @@ compile_commands.json
 
 # clangd
 .cache
+
+# macOS
+.DS_Store

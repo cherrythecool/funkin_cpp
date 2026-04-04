@@ -72,25 +72,26 @@ set(PNG_STATIC ON)
 add_subdirectory(thirdparty/libpng16)
 target_link_libraries(${PROJECT_NAME} PUBLIC png_static)
 
+add_subdirectory(thirdparty/glfw-fdd14e6)
+target_link_libraries(${PROJECT_NAME} PUBLIC glfw)
+
+set(ALSOFT_UTILS OFF)
+set(ALSOFT_EXAMPLES OFF)
+add_subdirectory(thirdparty/openal-soft-1.25.1)
+target_link_libraries(${PROJECT_NAME} PUBLIC OpenAL)
+
 if (WIN32)
     target_link_directories(${PROJECT_NAME} PRIVATE
         lib/win64
     )
 
     target_link_libraries(${PROJECT_NAME} PRIVATE
-        glfw3dll
-        OpenAL32
         freetype
     )
 
     configure_file(lib/win64/freetype.dll ../bin/freetype.dll COPYONLY)
-    configure_file(lib/win64/glfw3.dll ../bin/glfw3.dll COPYONLY)
-    configure_file(lib/win64/OpenAL32.dll ../bin/OpenAL32.dll COPYONLY)
 else()
     target_link_libraries(${PROJECT_NAME} PRIVATE
-        glfw
-        openal
-        freetype
         m
     )
 endif()

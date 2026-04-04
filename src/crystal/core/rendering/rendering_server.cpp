@@ -219,12 +219,17 @@ namespace crystal {
 
         double game_ratio = (double)GAME_SIZE.x / (double)GAME_SIZE.y;
         double window_ratio = (double)width / (double)height;
+        float window_scale_x, window_scale_y;
+        glfwGetWindowContentScale(window, &window_scale_x, &window_scale_y);
 
         output_size.x = window_ratio > game_ratio ? (double)height * game_ratio : width;
         output_size.y = window_ratio < game_ratio ? (double)width / game_ratio : height;
 
-        output_offset.x = (width - output_size.x) / 2.0;
-        output_offset.y = (height - output_size.y) / 2.0;
+        output_size.x *= window_scale_x;
+        output_size.y *= window_scale_y;
+
+        output_offset.x = (width*window_scale_x - output_size.x) / 2.0;
+        output_offset.y = (height*window_scale_y - output_size.y) / 2.0;
 
         glViewport(floor(output_offset.x), floor(output_offset.y), floor(output_size.x), floor(output_size.y));
     }
